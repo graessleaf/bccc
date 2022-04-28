@@ -52,7 +52,7 @@ body {
 .content {
   margin-left:20%;
   margin-right: 2%;
-  padding:24px;
+  padding: 24px 40px;
 }
 
 .content h1 {
@@ -96,7 +96,7 @@ div.desc p {
 }
 
 .responsive {
-  padding: 1%;
+  padding: 1% 0%;
   float: left;
   width: 90%;
 }

@@ -1,0 +1,80 @@
+/* Sidenav */
+
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0px;
+  width: 20%;
+  background-color: #dc9a9a;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+ul.nav li a {
+  display: block;
+  padding: 18px;
+  font-family: logic-monoscript;
+  font-size: calc(20px + 0.25vw);
+  font-weight: 800;
+  font-style: normal;
+  color: #181818;
+}
+
+ul.nav li a:hover {
+  background-color: #181818;
+	color: #dc9a9a;}
+
+
+@media screen and (max-width: 800px) {
+  ul.nav {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  ul.nav li a {
+    float: left;
+    padding: 15px;
+  }
+
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  ul.nav li a {
+    text-align: center;
+    float: none;
+  }
+}
+
+
+/* Content */
+
+body {
+  margin: 0;
+  background-color: #181818;
+}
+.content {
+  margin-left:25%;
+  margin-right: 10%;
+  padding:24px;
+}
+
+.content h1 {
+  color: #dc9a9a;
+  padding: 12px;
+  font-size: calc(28px + 1.5vw);
+  font-family: logic-monoscript, mono;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.content p {
+  color: #858585;
+  font-size: calc(16px + 0.15vw);
+  font-family: divenire-mono, serif;
+  font-weight: 400;
+  font-style: normal;
+    text-indent: 0px;
+}

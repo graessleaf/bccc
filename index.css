@@ -4,6 +4,7 @@ ul.nav {
   list-style-type: none;
   margin: 0;
   padding-left: 0px;
+  padding-top: 20px;
   width: 20%;
   background-color: #dc9a9a;
   position: fixed;
@@ -83,6 +84,7 @@ ul.nav li a:hover {
 
 body {
   margin: 0;
+  height: 105%;
   background-color: #181818;
 }
 
@@ -116,6 +118,16 @@ body {
   font-style: normal;
 }
 
+.second-column a {
+  text-decoration: underline;
+  font-weight: 700;
+  color: #181818;
+}
+
+.second-column a:hover {
+  background-color: #181818;
+	color: #dc9a9a;}
+
 .content p {
   color: #858585;
   font-size: calc(16px + 0.15vw);
@@ -134,7 +146,7 @@ body {
 .active {
   text-decoration: underline;
   style: bold;
-  font-weight: 700; 
+  font-weight: 700;
 }
 
 .second-column p {

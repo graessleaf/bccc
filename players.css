@@ -67,6 +67,7 @@ ul.nav li a:hover {
 @media only screen and (max-width: 600px) {
 .content {
   margin-top: 10%;
+  margin-right: 1%!important;
 }
    .first-column {
         width: 100%;
@@ -140,7 +141,7 @@ div.desc p {
 
 @media only screen and (max-width: 800px) {
   .responsive {
-    width: 95%;
+    width: 100%;
        height: calc(25% + 10px);
 
    }

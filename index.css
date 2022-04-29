@@ -97,6 +97,7 @@ body {
   color: #dc9a9a;
   padding: 6px;
   margin: 10px;
+  margin-bottom: 0px;
   font-size: calc(22px + 1.5vw);
   font-family: logic-monoscript, mono;
   font-weight: 800;
@@ -104,9 +105,11 @@ body {
 }
 
 .content h2 {
-  color: #181818;
-  padding: 2px;
-  margin-left: 10px;
+  background-color: #181818;
+  color: #dc9a9a;
+  padding: 6px;
+  margin: 10px;
+  margin-top: 0px;
   font-size: calc(12px + 0.5vw);
   font-family: logic-monoscript, mono;
   font-weight: 400;
@@ -121,6 +124,17 @@ body {
   margin: 10px;
   font-style: normal;
     text-indent: 0px;
+}
+
+.inactive {
+  color: #858585;
+  text-decoration: line-through;
+}
+
+.active {
+  text-decoration: underline;
+  style: bold;
+  font-weight: 700; 
 }
 
 .second-column p {

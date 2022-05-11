@@ -152,3 +152,11 @@ body {
 .second-column p {
   color: #181818;
 }
+
+.responsive {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 96%;
+  padding: 0px;
+}

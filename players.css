@@ -121,6 +121,16 @@ body {
   font-style: normal;
 }
 
+.first-column a {
+  text-decoration: underline;
+  font-weight: 700;
+  color: #dc9a9a;
+}
+
+.first-column a:hover {
+  background-color: #dc9a9a;
+	color: #181818;}
+
 .second-column a {
   text-decoration: underline;
   font-weight: 700;
@@ -157,39 +167,29 @@ body {
   font-weight: 700;
 }
 
-/* Gallery */
+/* Table */
 
 
-div.desc {
-  border: 20px solid #dc9a9a;
-  padding: 1px;
-  background-color: #dc9a9a;
-}
-
-div.desc p {
+table {
   color: #181818;
+  font-family: divenire-mono, serif;
+  font-weight: 400;
+  width: 100%;
 }
 
-* {
-  box-sizing: border-box;
+td, th {
+  border: 6px solid #181818;
+  text-align: left;
+ background-color: #dc9a9a;
+  padding: 8px;
 }
 
-.responsive {
-  padding: 1% 0%;
-  float: left;
-  width: 90%;
-}
 
-@media only screen and (max-width: 800px) {
-  .responsive {
-    width: 100%;
-       height: calc(25% + 10px);
+.table a {
+  text-decoration: underline;
+  font-weight: 700;
+  color: #181818; }
 
-   }
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+.table a:hover {
+    background-color: #181818;
+  	color: #dc9a9a;}

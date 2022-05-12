@@ -5,7 +5,7 @@ ul.nav {
   margin: 0;
   padding-left: 0px;
   padding-top: 20px;
-  width: 20%;
+  width: 16%;
   background-color: #dc9a9a;
   position: fixed;
   height: 100%;
@@ -43,7 +43,7 @@ ul.nav li a:hover {
   .inactive {
     display: none;
   }
-  
+
   div.content {
     margin-left: 0;}
 }
@@ -65,9 +65,11 @@ ul.nav li a:hover {
     width: 30%;
     margin-left: 5%;
     padding: 3px;
+        margin-top: 11%;
     float: left;
     background-color: #dc9a9a;
 }
+
 .mobile {
     display: none;
 }
@@ -110,10 +112,11 @@ body {
 }
 
 .content {
-  margin-left:22%;
+  margin-left:19%;
   margin-right: 10%;
   padding:24px;
 }
+
 
 .content h1 {
   background-color: #181818;

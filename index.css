@@ -176,9 +176,9 @@ body {
 
 .responsive {
   display: block;
-  margin-left: auto;
+  margin-left: 10px;
   margin-right: auto;
-  max-width: 96%;
+  max-width: 90%;
   padding: 0px;
   height: auto;
 }

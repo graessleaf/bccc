@@ -89,6 +89,9 @@ ul.nav li a:hover {
     border-style: solid;
 }
 
+table {
+  width: 90%;
+}
 
    .first-column {
         width: 100%;

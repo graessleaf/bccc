@@ -178,7 +178,8 @@ body {
   display: block;
   margin-left: 10px;
   margin-right: auto;
-  max-width: 90%;
+  max-width: 95%;
+  width: 95%;
   padding: 0px;
   height: auto;
 }

@@ -1,0 +1,72 @@
+BCCC Elos
+
+4/28
+CB beats TD
+EC beats PA
+CB beats TD
+	->				
+CB rates 1238 at 2 games (2/0/0)
+EC rates 1220 at 1 games (1/0/0)
+PA rates 1180 at 1 games (0/1/0)
+TD rates 1162 at 2 games (0/2/0)
+
+5/5
+EC beats HP
+CB beats SD
+JG beats MM
+JG beats PA
+MM beats HP
+DV beats TD
+TD beats JG
+CB beats EC
+EC beats CB
+JG beats EC
+TD beats CB
+      ->
+JG rates 1235 at 4 games (+35) (3/1/0)
+CB rates 1227 at 6 games (-11) (4/2/0)
+EC rates 1221 at 5 games ( +1) (3/2/0)
+DV rates 1218 at 1 games (+18) (1/0/0)
+MM rates 1200 at 2 games ( +0) (1/1/0)
+TD rates 1194 at 5 games (+32) (2/3/0)
+SD rates 1182 at 1 games (-18) (0/1/0)
+PA rates 1162 at 2 games (-18) (0/2/0)
+HP rates 1161 at 2 games (-39) (0/2/0)
+
+5/12
+CB beats DV
+TD beats MM
+JG beats HP
+CB beats MM
+CB beats JG
+JG beats HP
+CB beats HP
+      ->
+CB rates 1294 at 10 games (+67) (8/2/0)
+JG rates 1251 at  7 games (+16) (5/2/0)
+EC rates 1221 at  5 games ( +0) (3/2/0)
+DV rates 1199 at  2 games (-19) (1/1/0)
+TD rates 1195 at  7 games ( +1) (3/4/0)
+SA rates 1182 at  1 games ( +0) (0/1/0)
+MM rates 1164 at  4 games (-36) (1/3/0)
+PA rates 1162 at  2 games ( +0) (0/2/0)
+HP rates 1132 at  4 games (-29) (0/4/0)
+
+5/19
+JG beats HP
+TD beats CB
+EC beats CB
+JG beats TD
+HP draws OR
+Jg beats CB
+      ->
+JG rates 1300 at 10 games (+49)
+EC rates 1244 at  6 games (+23)
+CB rates 1227 at 13 games (-67)
+TD rates 1203 at  9 games ( +8)
+DV rates 1199 at  2 games ( +0)
+OR rates 1195 at  1 games ( -5)
+SA rates 1182 at  1 games ( +0)
+MM rates 1164 at  4 games ( +0)
+PA rates 1162 at  2 games ( +0)
+HP rates 1124 at  6 games ( -8)

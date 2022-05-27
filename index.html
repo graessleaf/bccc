@@ -10,12 +10,18 @@
 </head>
 <body>
 
+<audio id="yourTurn">
+  <source src="Images/yourTurn.mp3" type="audio/mpeg">
+</audio>
+
   <div class="nav">
 
     <ul class="nav">
     <img src="Images/webheader.png" width=100%>
     <li><a href="index.html">Information</a></li>
     <li><a href="players.html">Players</a></li>
+  </br></br>
+    <li><a onclick="playAudio(yourTurn)">Whose turn?</a></li>
   </ul>
     <div class="mobile">
       <h2> B.C. Chess Club
@@ -51,7 +57,14 @@
   </div>
 </div>
 
+<script>
+var x = document.getElementById("yourTurn");
 
+function playAudio() {
+  x.play();
+}
+
+</script>
 
 </body>
 </html>

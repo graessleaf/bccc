@@ -60,13 +60,33 @@ JG beats TD
 HP draws OR
 Jg beats CB
       ->
-JG rates 1300 at 10 games (+49)
-EC rates 1244 at  6 games (+23)
-CB rates 1227 at 13 games (-67)
-TD rates 1203 at  9 games ( +8)
-DV rates 1199 at  2 games ( +0)
-OR rates 1195 at  1 games ( -5)
-SA rates 1182 at  1 games ( +0)
-MM rates 1164 at  4 games ( +0)
-PA rates 1162 at  2 games ( +0)
-HP rates 1124 at  6 games ( -8)
+JG rates 1300 at 10 games (+49) (8/2/0)
+EC rates 1244 at  6 games (+23) (4/2/0)
+CB rates 1227 at 13 games (-67) (8/5/0)
+TD rates 1203 at  9 games ( +8) (4/5/0)
+DV rates 1199 at  2 games ( +0) (1/1/0)
+OR rates 1195 at  1 games ( -5) (0/0/1)
+SA rates 1182 at  1 games ( +0) (0/1/0)
+MM rates 1164 at  4 games ( +0) (1/3/0)
+PA rates 1162 at  2 games ( +0) (0/2/0)
+HP rates 1124 at  6 games ( -8) (0/5/1)
+
+5/26
+TD beats JG
+HP beats DV
+PA draws CB
+JG beats DV
+PA beats DV
+CB beats JG
+TD beats HP
+     ->
+JG rates 1265 at 13 games (-35) (9/4/0)
+CB rates 1247 at 15 games (+20) (9/5/1)
+EC rates 1244 at  6 games ( +0) (4/2/0)
+TD rates 1243 at 11 games (+40) (6/5/0)
+OR rates 1195 at  1 games ( +0) (0/0/1)
+PA rates 1186 at  4 games (+24) (1/2/1)
+SA rates 1182 at  1 games ( +0) (0/1/0)
+MM rates 1164 at  4 games ( +0) (1/3/0)
+DV rates 1141 at  5 games (-58) (1/4/0)
+HP rates 1133 at  8 games ( +9) (1/6/1)

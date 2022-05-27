@@ -10,13 +10,20 @@
 </head>
 <body>
 
-  <div class="nav">
+  <audio id="yourTurn">
+    <source src="Images/yourTurn.mp3" type="audio/mpeg">
+  </audio>
 
-    <ul class="nav">
-    <img src="Images/webheader.png" width=100%>
-    <li><a href="index.html">Information</a></li>
-    <li><a href="players.html">Players</a></li>
-  </ul>
+    <div class="nav">
+
+      <ul class="nav">
+      <img src="Images/webheader.png" width=100%>
+      <li><a href="index.html">Information</a></li>
+      <li><a href="players.html">Players</a></li>
+    </br></br>
+      <li><a onclick="playAudio(yourTurn)">Whose turn?</a></li>
+    </ul>
+
   <div class="mobile">
     <h2> B.C. Chess Club
       <span class="active">will</span>
@@ -24,6 +31,7 @@
     meet this week (May 26): </h2>
   <p>  8 A.M. \ <a href="https://www.bluecopperslc.com/" target="_blank">Blue Copper 2000</a> \ 401 N 300 W </p>
   </div>
+
 </div>
   </div>
 
@@ -43,9 +51,15 @@
  </tr>
  <tr>
  <td>Jackson G.</td>
- <td>1300</td>
- <td>8/2/0</td>
+ <td>1265</td>
+ <td>9/4/0</td>
  <td><a href="https://lichess.org/@/grassleaf">Lichess</a> \ <a href="https://www.chess.com/member/jacksongraessle"> Chess.com </a></td>
+</tr>
+<tr>
+  <td>Carter B.</td>
+  <td>1247</td>
+  <td>9/5/1</td>
+  <td><a href="https://lichess.org/@/caboyd"> Lichess</a></td>
 </tr>
 <tr>
   <td>Eric C.</td>
@@ -54,53 +68,33 @@
   <td>N/A</td>
 </tr>
  <tr>
-   <td>Carter B.</td>
-   <td>1227</td>
-   <td>8/5/0</td>
-   <td><a href="https://lichess.org/@/caboyd"> Lichess</a></td>
+   <td>Tyler D.</td>
+   <td>1243</td>
+   <td>6/5/0</td>
+   <td>N/A</td>
  </tr>
  <tr>
-   <td>Tyler D.</td>
-   <td>1203</td>
-   <td>4/5/0</td>
+   <td>Patrick A.</td>
+   <td>1186</td>
+   <td>1/2/1</td>
+   <td><a href="https://www.chess.com/member/bnkndcta"> Chess.com </a></td>
+ </tr>
+ <tr>
+   <td>Matt M.</td>
+   <td>1164</td>
+   <td>1/3/0</td>
    <td>N/A</td>
  </tr>
   <tr>
     <td>Drew V.</td>
-    <td>1199</td>
-    <td>1/1/0</td>
+    <td>1141</td>
+    <td>1/4/0</td>
     <td>N/A</td>
   </tr>
-  <tr>
-    <td>Oscar R.</td>
-    <td>1195</td>
-    <td>0/0/1</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Siena D.</td>
-    <td>1182</td>
-    <td>0/1/0</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Matt M.</td>
-    <td>1164</td>
-    <td>1/3/0</td>
-    <td>N/A</td>
-  </tr>
-
- <tr>
-   <td>Patrick A.</td>
-   <td>1162</td>
-   <td>0/2/0</td>
-   <td><a href="https://www.chess.com/member/bnkndcta"> Chess.com </a></td>
- </tr>
-
  <tr>
    <td>Harrison P.</td>
-   <td>1124</td>
-   <td>0/5/1</td>
+   <td>1133</td>
+   <td>1/6/1</td>
    <td>N/A</td>
  </tr>
 </table></div>
@@ -117,6 +111,16 @@
     </br>401 N 300 W
     </br> SLC, UT</p>
   </div>
+
+
+  <script>
+  var x = document.getElementById("yourTurn");
+
+  function playAudio() {
+    x.play();
+  }
+
+  </script>
 
 </body>
 </html>

@@ -47,7 +47,7 @@ JG rates 1251 at  7 games (+16) (5/2/0)
 EC rates 1221 at  5 games ( +0) (3/2/0)
 DV rates 1199 at  2 games (-19) (1/1/0)
 TD rates 1195 at  7 games ( +1) (3/4/0)
-SA rates 1182 at  1 games ( +0) (0/1/0)
+SD rates 1182 at  1 games ( +0) (0/1/0)
 MM rates 1164 at  4 games (-36) (1/3/0)
 PA rates 1162 at  2 games ( +0) (0/2/0)
 HP rates 1132 at  4 games (-29) (0/4/0)
@@ -58,7 +58,7 @@ TD beats CB
 EC beats CB
 JG beats TD
 HP draws OR
-Jg beats CB
+JG beats CB
       ->
 JG rates 1300 at 10 games (+49) (8/2/0)
 EC rates 1244 at  6 games (+23) (4/2/0)
@@ -86,7 +86,40 @@ EC rates 1244 at  6 games ( +0) (4/2/0)
 TD rates 1243 at 11 games (+40) (6/5/0)
 OR rates 1195 at  1 games ( +0) (0/0/1)
 PA rates 1186 at  4 games (+24) (1/2/1)
-SA rates 1182 at  1 games ( +0) (0/1/0)
+SD rates 1182 at  1 games ( +0) (0/1/0)
 MM rates 1164 at  4 games ( +0) (1/3/0)
 DV rates 1141 at  5 games (-58) (1/4/0)
 HP rates 1133 at  8 games ( +9) (1/6/1)
+
+6/2
+EC beats JG
+PA beats HP
+EC beats DV
+TD beats SD
+EC beats DV
+LX beats CB
+LX beats EC
+MR beats JG
+JG beats MR
+CB beats DV
+JG beats HP
+DV beats MR
+CC beats CB
+TD beats PA
+MR beats JI
+DV beats HP
+      ->
+TD rates 1277 at 13 games (+34)
+EC rates 1266 at 10 games (+22)
+JG rates 1254 at 17 games (-11)
+LX rates 1247 at  2 games (+47)
+CC rates 1222 at  1 games (+22)
+CB rates 1216 at 18 games (-31)
+MR rates 1198 at  4 games ( -2)
+OR rates 1195 at  1 games ( +0)
+PA rates 1186 at  6 games ( +0)
+JI rates 1179 at  1 games (-21)
+SD rates 1165 at  2 games (-17)
+MM rates 1164 at  4 games ( +0)
+DV rates 1147 at 10 games ( +6)
+HP rates 1084 at 11 games (-49)

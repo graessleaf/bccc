@@ -1,140 +1,356 @@
 <html>
+
 <head>
-<link rel="stylesheet" href="players.css">
-<link rel="stylesheet" href="https://use.typekit.net/vlj7tzj.css">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Blue Copper Chess Club</title>
-<link rel="icon" type="image/x-icon" href="Images/favicon.png">
-<meta property="og:image" content="Images/social.png">
-<meta property="og:image:type" content="image/png">
+  <link rel="stylesheet" href="players.css">
+  <link rel="stylesheet" href="https://use.typekit.net/vlj7tzj.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Blue Copper Chess Club</title>
+  <link rel="icon" type="image/x-icon" href="Images/favicon.png">
+  <meta property="og:image" content="Images/social.png">
+  <meta property="og:image:type" content="image/png">
 </head>
+
 <body>
 
   <audio id="yourTurn">
     <source src="Images/yourTurn.mp3" type="audio/mpeg">
   </audio>
 
-    <div class="nav">
+  <script>
 
-      <ul class="nav">
+    // audio
+    var x = document.getElementById("yourTurn");
+
+    function playAudio() {
+      x.play();
+    }
+
+    /**
+     * GAMES ARRAY
+     *
+     * All games must follow the format:
+     * INITIALS beats/draws INITIALS
+     *
+     * Make sure all string values " " are comma separated
+     *
+     * You can add comments of the dates anywhere as I've done below.
+     *
+     * Make sure beats or draws are lowercase  (my code sucks and I'm lazy)
+     *
+     **/
+    var games = [
+      // 4.28
+      "CB beats TD",
+      "EC beats PA",
+      "CB beats TD",
+      // 5.5
+      "EC beats HP",
+      "CB beats SD",
+      "JG beats MM",
+      "JG beats PA",
+      "MM beats HP",
+      "DV beats TD",
+      "TD beats JG",
+      "CB beats EC",
+      "EC beats CB",
+      "JG beats EC",
+      "TD beats CB",
+      // 5.12
+      "CB beats DV",
+      "TD beats MM",
+      "JG beats HP",
+      "CB beats MM",
+      "CB beats JG",
+      "JG beats HP",
+      "CB beats HP",
+      // 5.19
+      "JG beats HP",
+      "TD beats CB",
+      "EC beats CB",
+      "JG beats TD",
+      "HP draws OR",
+      "JG beats CB",
+      // 5.26
+      "TD beats JG",
+      "HP beats DV",
+      "PA draws CB",
+      "JG beats DV",
+      "PA beats DV",
+      "CB beats JG",
+      "TD beats HP",
+      // 6.2
+      "EC beats JG",
+      "EC beats JG",
+      "PA beats HP",
+      "EC beats DV",
+      "TD beats SD",
+      "EC beats DV",
+      "LH beats CB",
+      "LH beats EC",
+      "MR beats JG",
+      "JG beats MR",
+      "CB beats DV",
+      "JG beats HP",
+      "DV beats MR",
+      "CC beats CB",
+      "TD beats PA",
+      "MR beats JI",
+      "DV beats HP",
+      // 6.9
+     "DV beats JG",
+     "CB beats HP",
+     "LH beats TD",
+     "DV beats MM",
+     "TD beats MM",
+     "CB beats HP",
+     "JG beats HP",
+     "TC beats EC",
+     "LH beats DV",
+     "EC beats TC",
+     "CB beats PA",
+     "LH beats JG",
+     "TC beats DV",
+     "CB beats EC",
+     "TC beats CB",
+     "EC beats DV",
+     "LH beats HP",
+    ];
+
+    // consts for the web platform the player uses
+    // no need to edit these
+    const NONE = 0;
+    const LI = 1;
+    const CCOM = 2;
+
+
+    /**
+     * PLAYERS ARRAY
+     *
+     * To add a player:
+     *
+     * Copy paste an existing player --- {name: "Carter B.", ... etc }
+     * Paste it after the last player. Make sure all players are comma separated.
+     * Edit the name and initials. Initials *MUST* correspond with initials in the games array. Initials can be more than 2 characters if needed.
+     * irl_mmr, web_mmr, win, loss and tie can all stay as is (these values are calculated in javascript)
+     * web_platform should either be LI, CCOM or none.
+     * Handle should be either the username of the selected platform, OR some unique identifier for the player (first name, last initial for example)
+     *
+     * Display is a boolean that lets you show or hide the player. This allows MMRS to be calculated correectly even if we don't want to show an inactive player.
+     * ( for example I've hidden SD because I don't know who the fuck that is )
+     *
+     **/
+    var players = [
+      { name: "Carter B.", initials: "CB", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: LI, handle: "caboyd", display: true },
+      { name: "Jackson G.", initials: "JG", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: LI, handle: "grassleaf", display: true },
+      { name: "Eric C.", initials: "EC", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "ericc", display: true },
+      { name: "Drew V.", initials: "DV", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: LI, handle: "drchva", display: true },
+      { name: "Tyler D.", initials: "TD", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: LI, handle: "tmdba", display: true },
+      { name: "Matt M.", initials: "MM", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "mattm", display: true },
+      { name: "Patrick A.", initials: "PA", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: CCOM, handle: "bnkndcta", display: true },
+      { name: "Harrison P.", initials: "HP", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "NONE", display: true },
+      { name: "Siena D.", initials: "SD", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "sienad", display: false },
+      { name: "Liam H.", initials: "LH", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "liamh", display: true },
+      { name: "Tyler C.", initials: "TC", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "tylerc", display: true },
+      { name: "Matt R.", initials: "MR", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "mattr", display: true },
+      { name: "Cal C.", initials: "CC", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "calc", display: false },
+      { name: "Oscar R.", initials: "OR", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "oscarr", display: false },
+      { name: "Jacob I.", initials: "JI", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "jacobi", display: false }
+      ];
+
+    function buildProfileText(player) {
+    if (player.web_platform === LI)
+        return `<td><a href="https://lichess.org/@/${player.handle}">Lichess</a></td>`;
+      else if (player.web_platform === CCOM)
+        return `<td><a href="https://chess.com/member/${player.handle}">Chess.com</a></td>`;
+      else return `<td>...</td>`;
+    }
+
+    function sortPlayers() {
+      players.sort((a, b) => {
+        if (a.irl_mmr > b.irl_mmr) return -1;
+        if (b.irl_mmr > a.irl_mmr) return 1;
+        return 0;
+      });
+    }
+
+    function lichessCall(player) {
+      fetch(`https://lichess.org/api/user/${player.handle}`)
+        .then((r) => r.json())
+        .then((data) => {
+          // gets the mmr from the most played gamemode
+          let rates = [];
+          Object.entries(data.perfs).forEach(val => {
+            if(val[0].toLowerCase() !== "puzzle")
+            rates.push(val[1]);
+          })
+          let rate = rates.sort((a, b) => {return a.games > b.games ? -1 : 1})[0].rating;
+          document.getElementById(player.handle).innerHTML = rate;
+        })
+        .catch((e) => document.getElementById(player.handle).innerHTML = "...");
+    }
+
+    function chessDotComCall(player) {
+      fetch(`https://api.chess.com/pub/player/${player.handle}/stats`)
+        .then((r) => r.json())
+        .then((data) => {
+          // this just pulls chess_daily, should make more robust like lichess one
+          document.getElementById(player.handle).innerHTML = data.chess_daily.last.rating;
+        })
+        .catch((e) => document.getElementById(player.handle).innerHTML = "...");
+    }
+
+    function addRow(player) {
+      var newRow = document.getElementById('player-table').insertRow();
+      newRow.innerHTML = `
+            <td>${player.name}</td>
+            <td>${player.irl_mmr}</td>
+            <td>${player.win}/${player.loss}/${player.tie}</td>
+            ${buildProfileText(player)}
+            <td id="${player.handle}">${player.web_mmr}</td>
+
+        `;
+    }
+
+    // https://github.com/moroshko/elo.js/blob/master/elo.js
+    function getRatingDelta(myRating, opponentRating, myGameResult) {
+      if ([0, 0.5, 1].indexOf(myGameResult) === -1) {
+        return null;
+      }
+      var myChanceToWin = 1 / (1 + Math.pow(10, (opponentRating - myRating) / 400));
+      return Math.round(32 * (myGameResult - myChanceToWin));
+    }
+    // 0 is loss, .5 is tie, 1 is win
+    function getNewRating(myRating, opponentRating, myGameResult) {
+      return myRating + getRatingDelta(myRating, opponentRating, myGameResult);
+    }
+
+    // TODO: refactor
+    function parseGames() {
+      for (let game of games) {
+        var gameSplit = []; // array of split text
+        var result = -1; // result of game
+        if (game.includes("beats"))
+          gameSplit = game.split(" beats ")
+        else
+          gameSplit = game.split(" draws ")
+        const p1 = getPlayerByInitials(gameSplit[0]);
+        const p2 = getPlayerByInitials(gameSplit[1]);
+        // TODO: figure out a way to alter mmrs regardless of one player missing from array
+        if (p1 !== null && p2 !== null) {
+          var p1Rating = -1;
+          var p2Rating = -1;
+          if (game.includes("beats")) {
+            p1Rating = getNewRating(+p1.irl_mmr, +p2.irl_mmr, 1);
+            p2Rating = getNewRating(+p2.irl_mmr, +p1.irl_mmr, 0);
+            p1.win++;
+            p2.loss++;
+          } else {
+            p1Rating = getNewRating(+p1.irl_mmr, +p2.irl_mmr, .5);
+            p2Rating = getNewRating(+p2.irl_mmr, +p1.irl_mmr, .5);
+            p1.tie++;
+            p2.tie++;
+          }
+          p1.irl_mmr = p1Rating;
+          p2.irl_mmr = p2Rating;
+        }
+      }
+    }
+
+    // TODO: refactor
+    function getPlayerByInitials(inits) {
+      for (let player of players) {
+        if (player.initials === inits)
+          return player;
+      }
+      return null;
+    }
+
+    // https://stackoverflow.com/a/54437356
+    function getNextDayOfTheWeek(dayName, excludeToday = true, refDate = new Date()) {
+      const dayOfWeek = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+        .indexOf(dayName.slice(0, 3).toLowerCase());
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+      const fullDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+      if (dayOfWeek < 0) return;
+      refDate.setHours(0, 0, 0, 0);
+      refDate.setDate(refDate.getDate() + +!!excludeToday +
+        (dayOfWeek + 7 - refDate.getDay() - +!!excludeToday) % 7);
+      return `${months[refDate.getMonth()]} ${refDate.getDate()}`;
+    }
+
+    window.addEventListener('load', () => {
+      parseGames();
+      sortPlayers();
+      // populates the date field, switches to 'next week' if it's after noon o clock!
+      document.getElementById('mobile-date').textContent = `meet this week (${getNextDayOfTheWeek("Thursday", new Date().getHours() > 10 ? true : false)})`
+      document.getElementById('date').textContent = `meet this week (${getNextDayOfTheWeek("Thursday", new Date().getHours() > 10 ? true : false)})`
+      players.forEach(player => {
+        if (player.display) { // only render player if we have their display flag set to true
+          addRow(player);
+          if (player.web_platform === LI)
+            lichessCall(player);
+          else if (player.web_platform === CCOM)
+            chessDotComCall(player);
+          else
+            document.getElementById(player.handle).innerHTML = "...";
+        }
+      });
+    });
+  </script>
+
+  <div class="nav">
+    <ul class="nav">
       <img src="Images/webheader.png" width=100%>
       <li><a href="index.html">Information</a></li>
       <li><a href="players.html">Players</a></li>
     </br></br>
       <li><a onclick="playAudio(yourTurn)"><u>Whose turn?</u></a></li>
     </ul>
-
-  <div class="mobile">
-    <h2> B.C. Chess Club
-      <span class="active">will</span>
-      <span class="inactive"> will not</span>
-    meet this week (June 9): </h2>
-  <p>  8 A.M. \ <a href="https://www.bluecopperslc.com/" target="_blank">Blue Copper 2000</a> \ 401 N 300 W </p>
+    <div class="mobile">
+      <h2> B.C. Chess Club
+        <span class="active">will</span>
+        <span class="inactive"> will not</span>
+        <span id="mobile-date"></span>
+      </h2>
+      <p> 8 A.M. \ <a href="https://www.bluecopperslc.com/" target="_blank">Blue Copper 2000</a> \ 401 N 300 W </p>
+    </div>
   </div>
 
-</div>
-  </div>
 
   <div class="content">
 
-      <div class="first-column">
-<h1> Active Players:</h1>
-<p> Ratings are internal and based on in-club games. </br>
-  Calculations by <a href ="http://www.qa76.net/elo">qa76.net</a>. Records display W/L/D. </br>
-  Each week's game and Elo changes are recorded in <a href="club_elos.txt">this .txt document.</a></p>
-<div class="table"><table>
- <tr>
-   <th>Player</th>
-   <th>Rating</th>
-   <th>Record</th>
-   <th>Profile</th>
- </tr>
-<tr>
-  <td>Tyler D.</td>
-  <td>1277</td>
-  <td>8/5/0</td>
-  <td>N/A</td>
-</tr>
-<tr>
-<td>Eric C.</td>
-<td>1266</td>
-<td>7/3/0</td>
-<td>N/A</td>
-</tr>
+    <div class="first-column">
+      <h1> Active Players:</h1>
+      <p> Ratings are internal and based on in-club games. Calculations by <a
+          href="http://www.qa76.net/elo">qa76.net</a>. Records display W/L/D. </p>
+      <div class="table">
+        <table id="player-table">
+          <tr>
+            <th>Player</th>
+            <th>Rating [IRL]</th>
+            <th>Record</th>
+            <th>Profile</th>
+            <th>Rating [WEB]</th>
+          </tr>
+        </table>
+      </div>
+    </div>
 
-<tr>
-<td>Jackson G.</td>
-<td>1254</td>
-<td>11/5/0</td>
-<td><a href="https://lichess.org/@/grassleaf">Lichess</a> \ <a href="https://www.chess.com/member/jacksongraessle"> Chess.com </a></td>
-</tr>
+    <div class="second-column">
+      <h1>Join Us:</h1>
+      <h2> B.C. Chess Club </br>
+        <span class="active">will</span> &nbsp;&nbsp;
+        <span class="inactive"> will not </span></br>
+        <span id="date"></span>
+      </h2>
+      <p>Thursday Mornings, 8 A.M.</br>
+        <a href="https://www.bluecopperslc.com/" target="_blank">Blue Copper 2000 </a>
+        </br>401 N 300 W
+        </br> SLC, UT
+      </p>
+    </div>
 
-<tr>
-<td>Carter B.</td>
-<td>1216</td>
-<td>10/7/1</td>
-<td><a href="https://lichess.org/@/caboyd"> Lichess</a></td>
-</tr>
-
-<tr>
-<td>Matt R.</td>
-<td>1198</td>
-<td>2/2/0</td>
-<td>N/A</td>
-</tr>
-
-<tr>
-<td>Patrick A.</td>
-<td>1186</td>
-<td>2/3/1</td>
-<td><a href="https://www.chess.com/member/bnkndcta"> Chess.com </a></td>
-</tr>
-
-<tr>
-<td>Matt M.</td>
-<td>1164</td>
-<td>1/3/0</td>
-<td>N/A</td>
-</tr>
-
-<tr>
-<td>Drew V.</td>
-<td>1127</td>
-<td>2/7/1</td>
-<td><a href="https://lichess.org/@/drchva"> Lichess</a></td>
-</tr>
-
-<tr>
-<td>Harrison P.</td>
-<td>1104</td>
-<td>1/8/2</td>
-<td>N/A</td>
-</tr>
-
-</table></div>
-  </div>
-
-  <div class="second-column">
-    <h1>Join Us:</h1>
-    <h2> B.C. Chess Club </br>
-      <span class="active">will</span> &nbsp;&nbsp;
-      <span class="inactive"> will not </span></br>
-    meet this week (June 9) </h2>
-    <p>Thursday Mornings, 8 A.M.</br>
-    <a href="https://www.bluecopperslc.com/" target="_blank">Blue Copper 2000 </a>
-    </br>401 N 300 W
-    </br> SLC, UT</p>
-  </div>
-
-
-  <script>
-  var x = document.getElementById("yourTurn");
-
-  function playAudio() {
-    x.play();
-  }
-
-  </script>
 
 </body>
+
 </html>

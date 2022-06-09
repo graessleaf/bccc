@@ -1,0 +1,70 @@
+<html>
+<head>
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="https://use.typekit.net/vlj7tzj.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Blue Copper Chess Club</title>
+<link rel="icon" type="image/x-icon" href="Images/favicon.png">
+<meta property="og:image" content="Images/social.png">
+<meta property="og:image:type" content="image/png">
+</head>
+<body>
+
+<audio id="yourTurn">
+  <source src="Images/yourTurn.mp3" type="audio/mpeg">
+</audio>
+
+  <div class="nav">
+
+    <ul class="nav">
+    <img src="Images/webheader.png" width=100%>
+    <li><a href="index.html">Information</a></li>
+    <li><a href="players.html">Players</a></li>
+  </br></br>
+    <li><a onclick="playAudio(yourTurn)"><u>Whose turn?</u></a></li>
+  </ul>
+    <div class="mobile">
+      <h2> B.C. Chess Club
+        <span class="active">will</span>
+        <span class="inactive"> will not</span>
+      meet this week (June 9): </h2>
+    <p>  8 A.M. \ <a href="https://www.bluecopperslc.com/" target="_blank">Blue Copper 2000</a> \ 401 N 300 W </p>
+    </div>
+  </div>
+
+  <div class="content">
+  <div class="first-column">
+  <h1>Blue Copper Chess Club</h1>
+<img src="Images/frameanim.gif" class="responsive">
+<p> Blue Copper Copper Chess Club is a small, casual chess club in Salt Lake City, Utah. Players of all skill levels welcome! We play for 1.5-2 hours each Thursday morning at 8 A.M. (check the "This week" section of the page to make sure!) at Blue Copper 2000, a coffee shop in the Marmalade district of Salt Lake City.  </p>
+
+
+</br>
+<h1> B.C.C.C. T-Shirts</h1>
+<p> T-shirts are available for regular players. Inquire at a weekly meeting. </p>
+  </div>
+
+  <div class="second-column">
+    <h1>Join Us:</h1>
+    <h2> B.C. Chess Club </br>
+      <span class="active">will</span> &nbsp;&nbsp;
+      <span class="inactive"> will not </span></br>
+    meet this week (June 9) </h2>
+    <p>Thursday Mornings, 8 A.M.</br>
+    <a href="https://www.bluecopperslc.com/" target="_blank">Blue Copper 2000 </a>
+    </br>401 N 300 W
+    </br> SLC, UT</p>
+  </div>
+</div>
+
+<script>
+var x = document.getElementById("yourTurn");
+
+function playAudio() {
+  x.play();
+}
+
+</script>
+
+</body>
+</html>

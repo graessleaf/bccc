@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://use.typekit.net/vlj7tzj.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Blue Copper Chess Club</title>
+  <link rel="icon" type="image/x-icon" href="Images/favicon.png">
+  <meta property="og:image" content="Images/social.png">
+  <meta property="og:image:type" content="image/png">
+</head>
+
+<body>
+
+  <audio id="yourTurn">
+    <source src="Images/yourTurn.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="nav">
+
+    <ul class="nav">
+      <img src="Images/webheader.png" width=100%>
+      <li><a href="index.html">Information</a></li>
+      <li><a href="players.html">Players</a></li>
+      </br></br>
+      <li><a onclick="playAudio(yourTurn)"><u>Whose turn?</u></a></li>
+    </ul>
+    <div class="mobile">
+      <h2> B.C. Chess Club
+        <span class="active">will</span>
+        <span class="inactive"> will not</span>
+        <span id="mobile-date"></span>
+      </h2>
+      <p> 8 A.M. \ <a href="https://www.bluecopperslc.com/" target="_blank">Blue Copper 2000</a> \ 401 N 300 W </p>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="first-column">
+      <h1>Invitational Blitz Tournament 2022</h1>
+      <img src="Images/poster.png" class="responsive">
+      <p> More info coming soon! In the meantime, shoot us an Instagram message if you have any questions! <a href="https://www.instagram.com/bluecopperchessclub/"> @bluecopperchessclub </a></p>
+    </div>
+
+    <div class="second-column">
+      <h1>Join Us:</h1>
+      <h2> B.C. Chess Club </br>
+        <span class="active">will</span> &nbsp;&nbsp;
+        <span class="inactive"> will not </span></br>
+        <span id="date"></span>
+      </h2>
+      <p>Thursday Mornings, 8 A.M.</br>
+        <a href="https://www.bluecopperslc.com/" target="_blank">Blue Copper 2000 </a>
+        </br>401 N 300 W
+        </br> SLC, UT
+      </p>
+    </div>
+  </div>
+
+  <script>
+    var x = document.getElementById("yourTurn");
+
+    function playAudio() {
+      x.play();
+    }
+
+    // https://stackoverflow.com/a/54437356
+    function getNextDayOfTheWeek(dayName, excludeToday = true, refDate = new Date()) {
+      const dayOfWeek = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+        .indexOf(dayName.slice(0, 3).toLowerCase());
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+      const fullDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+      if (dayOfWeek < 0) return;
+      refDate.setHours(0, 0, 0, 0);
+      refDate.setDate(refDate.getDate() + +!!excludeToday +
+        (dayOfWeek + 7 - refDate.getDay() - +!!excludeToday) % 7);
+      return `${months[refDate.getMonth()]} ${refDate.getDate()}`;
+    }
+
+    window.addEventListener('load', () => {
+      // populates the date field, switches to 'next week' if it's after noon o clock!
+      document.getElementById('mobile-date').textContent = `meet this week (${getNextDayOfTheWeek("Thursday", new Date().getHours() > 10 ? true : false)})`
+      document.getElementById('date').textContent = `meet this week (${getNextDayOfTheWeek("Thursday", new Date().getHours() > 10 ? true : false)})`
+    });
+  </script>
+
+</body>
+
+</html>

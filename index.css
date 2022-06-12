@@ -145,6 +145,12 @@ body {
   color: #181818;
 }
 
+.first-column a {
+  text-decoration: underline;
+  font-weight: 700;
+  color: #dc9a9a;
+}
+
 .second-column a:hover {
   background-color: #181818;
 	color: #dc9a9a;}

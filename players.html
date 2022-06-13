@@ -64,56 +64,56 @@
       "JG beats HP",
       "CB beats HP",
       // 5.19
-      "JG beats HP",
-      "TD beats CB",
-      "EC beats CB",
-      "JG beats TD",
-      "HP draws OR",
-      "JG beats CB",
-      // 5.26
-      "TD beats JG",
-      "HP beats DV",
-      "PA draws CB",
-      "JG beats DV",
-      "PA beats DV",
-      "CB beats JG",
-      "TD beats HP",
-      // 6.2
-      "EC beats JG",
-      "EC beats JG",
-      "PA beats HP",
-      "EC beats DV",
-      "TD beats SD",
-      "EC beats DV",
-      "LH beats CB",
-      "LH beats EC",
-      "MR beats JG",
-      "JG beats MR",
-      "CB beats DV",
-      "JG beats HP",
-      "DV beats MR",
-      "CC beats CB",
-      "TD beats PA",
-      "MR beats JI",
-      "DV beats HP",
-      // 6.9
-     "DV beats JG",
-     "CB beats HP",
-     "LH beats TD",
-     "DV beats MM",
-     "TD beats MM",
-     "CB beats HP",
-     "JG beats HP",
-     "TC beats EC",
-     "LH beats DV",
-     "EC beats TC",
-     "CB beats PA",
-     "LH beats JG",
-     "TC beats DV",
-     "CB beats EC",
-     "TC beats CB",
+    "JG beats HP",
+    "TD beats CB",
+    "EC beats CB",
+    "JG beats TD",
+    "HP draws OR",
+    "JG beats CB",
+    // 5.26
+  "TD beats JG",
+  "HP beats DV",
+  "PA draws CB",
+  "JG beats DV",
+  "PA beats DV",
+  "CB beats JG",
+  "TD beats HP",
+  // 6.2
+     "EC beats JG",
+     "EC beats JG",
+     "PA beats HP",
      "EC beats DV",
-     "LH beats HP",
+     "TD beats SD",
+     "EC beats DV",
+     "LH beats CB",
+     "LH beats EC",
+     "MR beats JG",
+     "JG beats MR",
+     "CB beats DV",
+     "JG beats HP",
+     "DV beats MR",
+     "CC beats CB",
+     "TD beats PA",
+     "MR beats JI",
+     "DV beats HP",
+     // 6.9
+    "DV beats JG",
+    "CB beats HP",
+    "LH beats TD",
+    "DV beats MM",
+    "TD beats MM",
+    "CB beats HP",
+    "JG beats HP",
+    "TC beats EC",
+    "LH beats DV",
+    "EC beats TC",
+    "CB beats PA",
+    "LH beats JG",
+    "TC beats DV",
+    "CB beats EC",
+    "TC beats CB",
+    "EC beats DV",
+    "LH beats HP",
     ];
 
     // consts for the web platform the player uses
@@ -148,13 +148,13 @@
       { name: "Matt M.", initials: "MM", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "mattm", display: true },
       { name: "Patrick A.", initials: "PA", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: CCOM, handle: "bnkndcta", display: true },
       { name: "Harrison P.", initials: "HP", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "NONE", display: true },
-      { name: "Siena D.", initials: "SD", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "sienad", display: false },
+      { name: "Siena D.", initials: "SD", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "sienad", display: true },
       { name: "Liam H.", initials: "LH", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "liamh", display: true },
       { name: "Tyler C.", initials: "TC", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "tylerc", display: true },
       { name: "Matt R.", initials: "MR", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "mattr", display: true },
-      { name: "Cal C.", initials: "CC", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "calc", display: false },
-      { name: "Oscar R.", initials: "OR", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "oscarr", display: false },
-      { name: "Jacob I.", initials: "JI", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "jacobi", display: false }
+      { name: "Cal C.", initials: "CC", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "calc", display: true },
+      { name: "Oscar R.", initials: "OR", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "oscarr", display: true },
+      { name: "Jacob I.", initials: "JI", irl_mmr: "1200", web_mmr: "Loading..", win: 0, loss: 0, tie: 0, web_platform: NONE, handle: "jacobi", display: true }
       ];
 
     function buildProfileText(player) {
@@ -285,6 +285,7 @@
       document.getElementById('mobile-date').textContent = `meet this week (${getNextDayOfTheWeek("Thursday", new Date().getHours() > 10 ? true : false)})`
       document.getElementById('date').textContent = `meet this week (${getNextDayOfTheWeek("Thursday", new Date().getHours() > 10 ? true : false)})`
       players.forEach(player => {
+        if(player.win + player.loss + player.tie < 4) player.display = false;
         if (player.display) { // only render player if we have their display flag set to true
           addRow(player);
           if (player.web_platform === LI)
@@ -293,6 +294,7 @@
             chessDotComCall(player);
           else
             document.getElementById(player.handle).innerHTML = "...";
+
         }
       });
     });
